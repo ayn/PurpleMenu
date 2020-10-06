@@ -40,12 +40,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - Private methods
 
     @objc func togglePopover(_ sender: AnyObject?) {
-        if let button = statusBarItem.button {
-             if popover.isShown {
-                  popover.performClose(sender)
-             } else {
-                  popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-             }
+        guard let button = statusBarItem.button else { return }
+        
+        if popover.isShown {
+            popover.performClose(sender)
+        } else {
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
         }
     }
 
