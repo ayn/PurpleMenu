@@ -12,6 +12,9 @@
 		3726C1D1252CEEAB00B0B216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3726C1D0252CEEAB00B0B216 /* Assets.xcassets */; };
 		3726C1D4252CEEAB00B0B216 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3726C1D3252CEEAB00B0B216 /* Preview Assets.xcassets */; };
 		3726C1D7252CEEAB00B0B216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3726C1D5252CEEAB00B0B216 /* Main.storyboard */; };
+		3726C1E1252CF33000B0B216 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3726C1E0252CF33000B0B216 /* Sensor.swift */; };
+		3726C1E4252CF44600B0B216 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3726C1E3252CF44600B0B216 /* Result.swift */; };
+		3726C1E7252CF4CE00B0B216 /* PurpleAirApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		3726C1D6252CEEAB00B0B216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3726C1D8252CEEAB00B0B216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3726C1D9252CEEAB00B0B216 /* PurpleMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PurpleMenu.entitlements; sourceTree = "<group>"; };
+		3726C1E0252CF33000B0B216 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		3726C1E3252CF44600B0B216 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleAirApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,9 @@
 				3726C1D8252CEEAB00B0B216 /* Info.plist */,
 				3726C1D9252CEEAB00B0B216 /* PurpleMenu.entitlements */,
 				3726C1D2252CEEAB00B0B216 /* Preview Content */,
+				3726C1E0252CF33000B0B216 /* Sensor.swift */,
+				3726C1E3252CF44600B0B216 /* Result.swift */,
+				3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */,
 			);
 			path = PurpleMenu;
 			sourceTree = "<group>";
@@ -145,6 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3726C1CF252CEEA900B0B216 /* ContentView.swift in Sources */,
+				3726C1E1252CF33000B0B216 /* Sensor.swift in Sources */,
+				3726C1E7252CF4CE00B0B216 /* PurpleAirApi.swift in Sources */,
+				3726C1E4252CF44600B0B216 /* Result.swift in Sources */,
 				3726C1CD252CEEA900B0B216 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
