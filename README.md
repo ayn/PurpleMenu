@@ -5,7 +5,6 @@ For now you can change the `sensorId` [here](https://github.com/ayn/PurpleMenu/b
 
 ## TODOS
 
-* `LauncherApplication` doesn't launch PurpleMenu app properly, I'm launching it from Login Items for now
 * Settings UI
   * choose nearby sensor
   * choose which conversion (or none) to use
