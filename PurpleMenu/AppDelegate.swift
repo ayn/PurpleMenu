@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         refreshAqi()
 
-        _ = Timer.scheduledTimer(withTimeInterval: 900, repeats: true, block: { (_) in
+        _ = Timer.scheduledTimer(withTimeInterval: 300, repeats: true, block: { (_) in
             self.refreshAqi()
         })
 
@@ -66,10 +66,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func refreshAqi() {
         PurpleAirApi(sensorId: "67533").getData { (sensor) in
             guard let result = sensor.results?.first,
+                  let resultB = sensor.results?.last,
                   let pm25Str = result.pM2_5Value,
                   let pm25 = Float(pm25Str),
                   let pm25Cf1Str = result.pm2_5_cf_1,
                   let pm25Cf1 = Float(pm25Cf1Str),
+                  let pm25Cf1StrB = resultB.pm2_5_cf_1,
+                  let pm25Cf1B = Float(pm25Cf1StrB),
                   let humidityStr = result.humidity,
                   let humidity = Float(humidityStr),
                   let button = self.statusBarItem.button
@@ -77,7 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
             debugPrint("pm25 = \(pm25), pm25Cf1 = \(pm25Cf1), RH = \(humidity)")
 
-            let aqi = self.pmToEPA(paCf1: pm25Cf1, humidity: humidity)
+            let aqi = self.pmToEPA(paCf1: (pm25Cf1 + pm25Cf1B) * 0.5, humidity: humidity)
 
             DispatchQueue.main.async {
                 button.title = "aqi=\(aqi)"
