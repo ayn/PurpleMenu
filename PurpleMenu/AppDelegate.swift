@@ -29,14 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // guard let button = statusBarItem.button else { return }
-        //
-        // button.image = NSImage(named: "ventilation")
-        // button.imagePosition = .imageLeft
-        // button.image?.isTemplate = true
-        // button.action = #selector(togglePopover(_:))
-
         refreshAqi()
+
         _ = Timer.scheduledTimer(withTimeInterval: 900, repeats: true, block: { (_) in
             self.refreshAqi()
         })

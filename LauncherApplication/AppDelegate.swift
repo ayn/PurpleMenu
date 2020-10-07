@@ -36,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             components.removeLast()
             components.removeLast()
             components.append("MacOS")
-            components.append("PurpleMenu") //main app name
+            components.append("PurpleMenu")
 
             let newPath = NSString.path(withComponents: components)
 
