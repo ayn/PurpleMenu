@@ -7,6 +7,11 @@
 
 import Cocoa
 import SwiftUI
+import ServiceManagement
+
+extension Notification.Name {
+    static let killLauncher = Notification.Name("killLauncher")
+}
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -35,6 +40,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         _ = Timer.scheduledTimer(withTimeInterval: 900, repeats: true, block: { (_) in
             self.refreshAqi()
         })
+
+        // https://theswiftdev.com/how-to-launch-a-macos-app-at-login/
+        let launcherAppId = "com.andrewng.LauncherApplication"
+        let runningApps = NSWorkspace.shared.runningApplications
+        let isRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
+
+        SMLoginItemSetEnabled(launcherAppId as CFString, true)
+
+        if isRunning {
+            DistributedNotificationCenter.default().post(name: .killLauncher, object: Bundle.main.bundleIdentifier!)
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
