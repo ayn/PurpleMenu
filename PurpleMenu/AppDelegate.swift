@@ -74,8 +74,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                   let pm25Cf1StrB = resultB.pm2_5_cf_1,
                   let pm25Cf1B = Float(pm25Cf1StrB),
                   let humidityStr = result.humidity,
-                  let humidity = Float(humidityStr),
-                  let button = self.statusBarItem.button
+                  let humidity = Float(humidityStr)
             else { return }
 
             debugPrint("pm25 = \(pm25), pm25Cf1 = \(pm25Cf1), RH = \(humidity)")
@@ -83,7 +82,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let aqi = self.pmToEPA(paCf1: (pm25Cf1 + pm25Cf1B) * 0.5, humidity: humidity)
 
             DispatchQueue.main.async {
-                button.title = "aqi=\(aqi)"
+                self.statusBarItem.button?.title = "aqi=\(aqi)"
             }
         }
     }
