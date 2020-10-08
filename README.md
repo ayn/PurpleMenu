@@ -6,5 +6,4 @@ For now you can change the `sensorId` [here](https://github.com/ayn/PurpleMenu/b
 ## TODOS
 
 * Settings UI
-  * choose nearby sensor
   * choose which conversion (or none) to use

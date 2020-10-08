@@ -8,9 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var sensor = SensorViewModel()
+
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        GeometryReader { g in
+            VStack {
+                Spacer()
+                HStack {
+                    Text("Sensor ID")
+                        .frame(alignment: .trailing)
+                    TextField("Sensor ID", text: $sensor.sensorId, onCommit:  {
+                        sensor.update()
+                    })
+                    .frame(width: 80)
+                }
+                .frame(width: g.size.width / 2, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                HStack {
+                    Button("Update") {
+                        sensor.update()
+                    }
+                    Button("Quit") {
+                        exit(0)
+                    }
+                }
+                Spacer()
+            }
+        }
     }
 }
 

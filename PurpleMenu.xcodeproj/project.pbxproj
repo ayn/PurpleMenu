@@ -21,6 +21,8 @@
 		3748D197252D505300A758D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3748D195252D505300A758D6 /* Main.storyboard */; };
 		3748D1A0252D50F100A758D6 /* LauncherApplication.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3748D18A252D505200A758D6 /* LauncherApplication.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3748D1A5252D511200A758D6 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3748D1A4252D511200A758D6 /* ServiceManagement.framework */; };
+		37A3C07F252FB74400C2D12C /* SensorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3C07E252FB74400C2D12C /* SensorViewModel.swift */; };
+		37A3C083252FCCA700C2D12C /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A3C082252FCCA700C2D12C /* UserDefaultsExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,6 +58,8 @@
 		3748D198252D505300A758D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3748D199252D505300A758D6 /* LauncherApplication.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LauncherApplication.entitlements; sourceTree = "<group>"; };
 		3748D1A4252D511200A758D6 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		37A3C07E252FB74400C2D12C /* SensorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorViewModel.swift; sourceTree = "<group>"; };
+		37A3C082252FCCA700C2D12C /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				3726C1E0252CF33000B0B216 /* Sensor.swift */,
 				3726C1E3252CF44600B0B216 /* Result.swift */,
 				3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */,
+				37A3C07E252FB74400C2D12C /* SensorViewModel.swift */,
+				37A3C082252FCCA700C2D12C /* UserDefaultsExtension.swift */,
 			);
 			path = PurpleMenu;
 			sourceTree = "<group>";
@@ -256,6 +262,8 @@
 				3726C1E1252CF33000B0B216 /* Sensor.swift in Sources */,
 				3726C1E7252CF4CE00B0B216 /* PurpleAirApi.swift in Sources */,
 				3726C1E4252CF44600B0B216 /* Result.swift in Sources */,
+				37A3C07F252FB74400C2D12C /* SensorViewModel.swift in Sources */,
+				37A3C083252FCCA700C2D12C /* UserDefaultsExtension.swift in Sources */,
 				3726C1CD252CEEA900B0B216 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

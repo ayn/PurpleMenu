@@ -5,8 +5,10 @@
 //  Created by Andrew Ng on 10/6/20.
 //
 
+import Foundation
 import Cocoa
 import SwiftUI
+import Combine
 import ServiceManagement
 
 extension Notification.Name {
@@ -16,12 +18,14 @@ extension Notification.Name {
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
+    let sensorViewModel = SensorViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
     var window: NSWindow!
     lazy var popover: NSPopover = {
         let contentView = ContentView()
         let popover = NSPopover()
 
-        popover.contentSize = NSSize(width: 400, height: 400)
+        popover.contentSize = NSSize(width: 300, height: 200)
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(rootView: contentView)
 
@@ -29,6 +33,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        statusBarItem.button?.action = #selector(togglePopover(_:))
+        bindDefaults()
         refreshAqi()
 
         _ = Timer.scheduledTimer(withTimeInterval: 300, repeats: true, block: { (_) in
@@ -53,6 +59,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - Private methods
 
+    private func bindDefaults() {
+        UserDefaults.standard
+            .publisher(for: \.sensorId)
+            .handleEvents(receiveOutput: { sensorId in
+                debugPrint("sensorId is now: \(sensorId)")
+                self.refreshAqi()
+            })
+            .sink { _ in }
+            .store(in: &subscriptions)
+    }
+
     @objc func togglePopover(_ sender: AnyObject?) {
         guard let button = statusBarItem.button else { return }
 
@@ -64,7 +81,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func refreshAqi() {
-        PurpleAirApi(sensorId: "67533").getData { (sensor) in
+        PurpleAirApi(sensorId: UserDefaults.standard.sensorId).getData { (sensor) in
             guard let result = sensor.results?.first,
                   let resultB = sensor.results?.last,
                   let pm25Str = result.pM2_5Value,
@@ -77,7 +94,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                   let humidity = Float(humidityStr)
             else { return }
 
-            debugPrint("pm25 = \(pm25), pm25Cf1 = \(pm25Cf1), RH = \(humidity)")
+            debugPrint("id = \(self.sensorViewModel.sensorId), pm25 = \(pm25), pm25Cf1 = \(pm25Cf1), RH = \(humidity)")
 
             let aqi = self.pmToEPA(paCf1: (pm25Cf1 + pm25Cf1B) * 0.5, humidity: humidity)
 
