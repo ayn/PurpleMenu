@@ -19,7 +19,7 @@ final class SensorViewModel: ObservableObject {
     func update() {
         guard !sensorId.isEmpty else { return }
 
-        UserDefaults.standard.sensorId = sensorId
         UserDefaults.standard.conversion = conversion
+        UserDefaults.standard.sensorId = sensorId
     }
 }
