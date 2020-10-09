@@ -1,4 +1,6 @@
 # PurpleMenu
+![menu bar screenshot](https://dl.dropboxusercontent.com/s/ev91nfl9rmq4jp6/Screen%20Shot%202020-10-08%20at%2021.41.22.png?dl=0)
+
 I wrote this to display my nearest Purple Air AQI with US EPA conversion in my macOS menu bar, tested in Catalina and Big Sur.
 
 There's a basic UI to change sensor to any public Purple Air outdoor sensor, and choose between US EPA, AQandU, LRAPA, and no conversion.
