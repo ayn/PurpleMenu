@@ -94,9 +94,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                   let humidity = Float(humidityStr)
             else { return }
 
-            debugPrint("id = \(self.sensorViewModel.sensorId), pm25 = \(pm25), pm25Cf1 = \(pm25Cf1), RH = \(humidity)")
+            debugPrint("id = \(self.sensorViewModel.sensorId), conversion = \(UserDefaults.standard.conversion), pm25 = \(pm25), pm25Cf1 = \(pm25Cf1), RH = \(humidity)")
 
-            let aqi = self.pmToEPA(paCf1: (pm25Cf1 + pm25Cf1B) * 0.5, humidity: humidity)
+            let aqi: Int
+
+            switch Conversion(rawValue: UserDefaults.standard.conversion) ?? Conversion.epa {
+            case .none:
+                aqi = self.pmToAQI(pm25)
+            case .epa:
+                aqi = self.pmToEPA(paCf1: (pm25Cf1 + pm25Cf1B) * 0.5, humidity: humidity)
+            case .aqandu:
+                aqi = self.pmToAQandU(pm: pm25)
+            case .lrapa:
+                aqi = self.pmToLRAPA(paCf1: pm25Cf1)
+            }
 
             DispatchQueue.main.async {
                 self.statusBarItem.button?.title = "aqi=\(aqi)"

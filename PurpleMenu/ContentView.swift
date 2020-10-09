@@ -23,6 +23,13 @@ struct ContentView: View {
                     .frame(width: 80)
                 }
                 .frame(width: g.size.width / 2, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Picker("Conversion", selection: $sensor.conversion) {
+                    ForEach(Conversion.allCases) { conversion in
+                        Text(conversion.rawValue)
+                    }
+                }
+                .frame(width: 180)
+                .pickerStyle(PopUpButtonPickerStyle())
                 HStack {
                     Button("Update") {
                         sensor.update()

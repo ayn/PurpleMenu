@@ -7,6 +7,15 @@
 
 import Foundation
 
+enum Conversion: String, CaseIterable, Identifiable {
+    case none = "None", epa = "US EPA", aqandu = "AQandU", lrapa = "LRAPA"
+
+    var id: String { self.rawValue }
+    var description: String {
+        return self.rawValue
+    }
+}
+
 struct Sensor: Codable {
     let mapVersion : String?
     let baseVersion : String?

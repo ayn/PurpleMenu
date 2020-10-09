@@ -9,13 +9,17 @@ import Foundation
 import Combine
 
 final class SensorViewModel: ObservableObject {
-    static let userDefaultsKey = "SensorId"
-
     @Published var sensorId = UserDefaults.standard.sensorId
+    @Published var conversion = UserDefaults.standard.conversion {
+        didSet {
+            self.update()
+        }
+    }
 
     func update() {
-        if !sensorId.isEmpty {
-            UserDefaults.standard.sensorId = sensorId
-        }
+        guard !sensorId.isEmpty else { return }
+
+        UserDefaults.standard.sensorId = sensorId
+        UserDefaults.standard.conversion = conversion
     }
 }

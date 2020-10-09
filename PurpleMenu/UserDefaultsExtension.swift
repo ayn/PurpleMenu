@@ -16,4 +16,13 @@ extension UserDefaults {
             set(newValue, forKey: "sensor_id")
         }
     }
+
+    @objc var conversion: String {
+        get {
+            return string(forKey: "conversion") ?? Conversion.epa.rawValue
+        }
+        set {
+            set(newValue, forKey: "conversion")
+        }
+    }
 }
