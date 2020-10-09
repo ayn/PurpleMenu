@@ -3,4 +3,12 @@ I wrote this to display my nearest Purple Air AQI with US EPA conversion in my m
 
 There's a basic UI to change sensor to any public Purple Air outdoor sensor, and choose between US EPA, AQandU, LRAPA, and no conversion.
 
+## How to Install
+
+* Go to [Releases](https://github.com/ayn/PurpleMenu/releases)
+* Download `PurpleMenu.zip` from the most recent release
+* unzip and launch `PurpleMenu.app`
+
 To get a sensor ID, go to [Purple Air Map](http://www.purpleair.com/map?mylocation) in your browser, click/tap on a sensor on the map, look at the url in your browser's location bar, and find the `select=` parameter.
+
+To automatically launch PurpleMenu on login, just add it to your [Login Items](https://support.apple.com/guide/mac-help/open-items-automatically-when-you-log-in-mh15189/mac).
