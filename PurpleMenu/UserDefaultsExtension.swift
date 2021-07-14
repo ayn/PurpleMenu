@@ -10,7 +10,7 @@ import Foundation
 extension UserDefaults {
     @objc var sensorId: String {
         get {
-            return string(forKey: "sensor_id") ?? "67533"
+            return string(forKey: "sensor_id") ?? "70511"
         }
         set {
             set(newValue, forKey: "sensor_id")
