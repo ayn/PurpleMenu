@@ -107,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 aqi = self.pmToAQandU(pm: pm25)
             case .lrapa:
                 aqi = self.pmToLRAPA(paCf1: pm25Cf1)
-            case .woodfire:
+            case .woodsmoke:
                 aqi = self.pmToWoodsmoke(pm25Cf1: (pm25Cf1 + pm25Cf1B) * 0.5)
             }
 
