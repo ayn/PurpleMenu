@@ -8,7 +8,7 @@
 import Foundation
 
 enum Conversion: String, CaseIterable, Identifiable {
-    case none = "None", epa = "US EPA", aqandu = "AQandU", lrapa = "LRAPA"
+    case none = "None", epa = "US EPA", aqandu = "AQandU", lrapa = "LRAPA", woodfire = "Woodsmoke"
 
     var id: String { self.rawValue }
     var description: String {

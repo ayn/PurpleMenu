@@ -107,6 +107,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 aqi = self.pmToAQandU(pm: pm25)
             case .lrapa:
                 aqi = self.pmToLRAPA(paCf1: pm25Cf1)
+            case .woodfire:
+                aqi = self.pmToWoodsmoke(pm25Cf1: (pm25Cf1 + pm25Cf1B) * 0.5)
             }
 
             DispatchQueue.main.async {
@@ -147,24 +149,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func pmToAQandU(pm: Float) -> Int {
-      // formula found on https://www.purpleair.com/map, shown when you hover on the `?` next to `Conversion`
-      // PM2.5 (µg/m³) = 0.778 x PA + 2.65
-      return pmToAQI(0.778 * pm + 2.65)
+        // formula found on https://www.purpleair.com/map, shown when you hover on the `?` next to `Conversion`
+        // PM2.5 (µg/m³) = 0.778 x PA + 2.65
+        return pmToAQI(0.778 * pm + 2.65)
     }
 
     func pmToLRAPA(paCf1: Float) -> Int {
-      // formula found on https://www.purpleair.com/map, shown when you hover on the `?` next to `Conversion`
-      // 0 - 65 µg/m³ range:
-      // LRAPA PM2.5 (µg/m³) = 0.5 x PA (PM2.5 CF=ATM) – 0.66
-      // note that this calculation at PurpleAir seems wrong, their PM2.5 values are from CF=ATM (atmo) rather than CF=1 (standard particles)
-      return pmToAQI(0.5 * paCf1 - 0.66)
+        // formula found on https://www.purpleair.com/map, shown when you hover on the `?` next to `Conversion`
+        // 0 - 65 µg/m³ range:
+        // LRAPA PM2.5 (µg/m³) = 0.5 x PA (PM2.5 CF=ATM) – 0.66
+        // note that this calculation at PurpleAir seems wrong, their PM2.5 values are from CF=ATM (atmo) rather than CF=1 (standard particles)
+        return pmToAQI(0.5 * paCf1 - 0.66)
     }
 
     func pmToEPA(paCf1: Float, humidity: Float) -> Int {
-      // formula found on https://www.purpleair.com/map, shown when you hover on the `?` next to `Conversion`
-      // 0-250 ug/m3 range (>250 may underestimate true PM2.5):
-      // PM2.5 (µg/m³) = 0.534 x PA(cf_1) - 0.0844 x RH + 5.604
-      // more at https://cfpub.epa.gov/si/si_public_record_report.cfm?dirEntryId=349513&Lab=CEMM&simplesearch=0&showcriteria=2&sortby=pubDate&timstype=&datebeginpublishedpresented=08/25/2018
-      return pmToAQI(0.534 * paCf1 - 0.0844 * humidity + 5.604)
+        // formula found on https://www.purpleair.com/map, shown when you hover on the `?` next to `Conversion`
+        // 0-250 ug/m3 range (>250 may underestimate true PM2.5):
+        // PM2.5 (µg/m³) = 0.534 x PA(cf_1) - 0.0844 x RH + 5.604
+        // more at https://cfpub.epa.gov/si/si_public_record_report.cfm?dirEntryId=349513&Lab=CEMM&simplesearch=0&showcriteria=2&sortby=pubDate&timstype=&datebeginpublishedpresented=08/25/2018
+        return pmToAQI(0.534 * paCf1 - 0.0844 * humidity + 5.604)
+    }
+
+    func pmToWoodsmoke(pm25Cf1: Float) -> Int {
+        // WOODSMOKE: From a study in Australia comparing Purple Air with NSW Government TEOM PM2.5 and Armidale Regional Council's DustTrak measurements - see published peer-reviewed study - https://www.mdpi.com/2073-4433/11/8/856/htm.
+        // Woodsmoke PM2.5 (µg/m³) = 0.55 x PA (PM2.5 CF=1) + 0.53
+
+        return pmToAQI(0.55 * pm25Cf1 + 0.53)
     }
 }
