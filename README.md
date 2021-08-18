@@ -3,7 +3,7 @@
 
 I wrote this to display my nearest Purple Air AQI with US EPA conversion in my macOS menu bar, tested in Catalina and Big Sur.
 
-There's a basic UI to change sensor to any public Purple Air outdoor sensor, and choose between US EPA, AQandU, LRAPA, and no conversion.
+There's a basic UI to change sensor to any public Purple Air outdoor sensor, and choose between US EPA, AQandU, LRAPA, WOODSMOKE, and no conversion.
 
 ## How to Install
 
