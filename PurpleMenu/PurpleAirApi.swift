@@ -12,7 +12,7 @@ class PurpleAirApi {
     var apiKey: String
 
     init(sensorId: String, apiKey: String) {
-        urlString = "https://www.purpleair.com/json?show=" + sensorId
+        urlString = "https://api.purpleair.com/v1/sensors/" + sensorId
         self.apiKey = apiKey
     }
 
