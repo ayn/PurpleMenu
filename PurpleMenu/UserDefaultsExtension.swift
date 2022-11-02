@@ -17,6 +17,15 @@ extension UserDefaults {
         }
     }
 
+    @objc var apiKey: String {
+        get {
+            return string(forKey: "apiKey") ?? "api-key"
+        }
+        set {
+            set(newValue, forKey: "apiKey")
+        }
+    }
+
     @objc var conversion: String {
         get {
             return string(forKey: "conversion") ?? Conversion.epa.rawValue

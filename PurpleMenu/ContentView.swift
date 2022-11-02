@@ -22,6 +22,14 @@ struct ContentView: View {
                     })
                     .frame(width: 80)
                 }
+                HStack {
+                    Text("API Key")
+                        .frame(alignment: .trailing)
+                    TextField("API Key", text: $sensor.apiKey, onCommit:  {
+                        sensor.update()
+                    })
+                    .frame(width: 80)
+                }
                 .frame(width: g.size.width / 2, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Picker("Conversion", selection: $sensor.conversion) {
                     ForEach(Conversion.allCases) { conversion in

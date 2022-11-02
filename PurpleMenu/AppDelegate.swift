@@ -81,7 +81,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func refreshAqi() {
-        PurpleAirApi(sensorId: UserDefaults.standard.sensorId).getData { (sensor) in
+        PurpleAirApi(sensorId: UserDefaults.standard.sensorId, apiKey: UserDefaults.standard.apiKey).getData { (sensor) in
             guard let result = sensor.results?.first,
                   let resultB = sensor.results?.last,
                   let pm25Str = result.pM2_5Value,

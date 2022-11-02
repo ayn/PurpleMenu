@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,7 +49,7 @@
 		3726C1D9252CEEAB00B0B216 /* PurpleMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PurpleMenu.entitlements; sourceTree = "<group>"; };
 		3726C1E0252CF33000B0B216 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		3726C1E3252CF44600B0B216 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurpleAirApi.swift; sourceTree = "<group>"; };
+		3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = PurpleAirApi.swift; sourceTree = "<group>"; tabWidth = 4; wrapsLines = 0; };
 		3748D18A252D505200A758D6 /* LauncherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LauncherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3748D18C252D505200A758D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3748D190252D505300A758D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,9 +89,9 @@
 				3726C1CA252CEEA900B0B216 /* Products */,
 				3748D1A3252D511200A758D6 /* Frameworks */,
 			);
-			indentWidth = 2;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 2;
+			tabWidth = 4;
 		};
 		3726C1CA252CEEA900B0B216 /* Products */ = {
 			isa = PBXGroup;
@@ -214,7 +214,7 @@
 				};
 			};
 			buildConfigurationList = 3726C1C4252CEEA900B0B216 /* Build configuration list for PBXProject "PurpleMenu" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -426,7 +426,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"PurpleMenu/Preview Content\"";
-				DEVELOPMENT_TEAM = 78ZZ4WB6Z3;
+				DEVELOPMENT_TEAM = BVZF7TL777;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PurpleMenu/Info.plist;
@@ -453,7 +453,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"PurpleMenu/Preview Content\"";
-				DEVELOPMENT_TEAM = 78ZZ4WB6Z3;
+				DEVELOPMENT_TEAM = BVZF7TL777;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PurpleMenu/Info.plist;
@@ -476,11 +476,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"LauncherApplication/Preview Content\"";
-				DEVELOPMENT_TEAM = 78ZZ4WB6Z3;
+				DEVELOPMENT_TEAM = BVZF7TL777;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LauncherApplication/Info.plist;
@@ -504,11 +505,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LauncherApplication/LauncherApplication.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"LauncherApplication/Preview Content\"";
-				DEVELOPMENT_TEAM = 78ZZ4WB6Z3;
+				DEVELOPMENT_TEAM = BVZF7TL777;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LauncherApplication/Info.plist;

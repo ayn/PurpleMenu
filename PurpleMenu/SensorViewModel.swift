@@ -10,6 +10,7 @@ import Combine
 
 final class SensorViewModel: ObservableObject {
     @Published var sensorId = UserDefaults.standard.sensorId
+    @Published var apiKey = UserDefaults.standard.apiKey
     @Published var conversion = UserDefaults.standard.conversion {
         didSet {
             self.update()
@@ -21,5 +22,6 @@ final class SensorViewModel: ObservableObject {
 
         UserDefaults.standard.conversion = conversion
         UserDefaults.standard.sensorId = sensorId
+        UserDefaults.standard.apiKey = apiKey
     }
 }
