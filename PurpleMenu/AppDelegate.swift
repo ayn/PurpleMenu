@@ -81,18 +81,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func refreshAqi() {
-        PurpleAirApi(sensorId: UserDefaults.standard.sensorId, apiKey: UserDefaults.standard.apiKey).getData { (sensor) in
-            guard let result = sensor.results?.first,
-                  let resultB = sensor.results?.last,
-                  let pm25Str = result.pM2_5Value,
-                  let pm25 = Float(pm25Str),
-                  let pm25Cf1Str = result.pm2_5_cf_1,
-                  let pm25Cf1 = Float(pm25Cf1Str),
-                  let pm25Cf1StrB = resultB.pm2_5_cf_1,
-                  let pm25Cf1B = Float(pm25Cf1StrB),
-                  let humidityStr = result.humidity,
-                  let humidity = Float(humidityStr)
+        PurpleAirApi(sensorId: UserDefaults.standard.sensorId, apiKey: UserDefaults.standard.apiKey).getData { (sensors) in
+            guard let sensor = sensors.sensor,
+                  let pm25D = sensor.pm25,
+                  let pm25Cf1D = sensor.pm25_CF1,
+                  let humidityD = sensor.humidity
             else { return }
+
+            let pm25 = Float(pm25D)
+            let pm25Cf1 = Float(pm25Cf1D)
+            let humidity = Float(humidityD)
 
             debugPrint("id = \(self.sensorViewModel.sensorId), conversion = \(UserDefaults.standard.conversion), pm25 = \(pm25), pm25Cf1 = \(pm25Cf1), RH = \(humidity)")
 
@@ -102,13 +100,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             case .none:
                 aqi = self.pmToAQI(pm25)
             case .epa:
-                aqi = self.pmToEPA(paCf1: (pm25Cf1 + pm25Cf1B) * 0.5, humidity: humidity)
+                aqi = self.pmToEPA(paCf1: pm25Cf1, humidity: humidity)
             case .aqandu:
                 aqi = self.pmToAQandU(pm: pm25)
             case .lrapa:
                 aqi = self.pmToLRAPA(paCf1: pm25Cf1)
             case .woodsmoke:
-                aqi = self.pmToWoodsmoke(pm25Cf1: (pm25Cf1 + pm25Cf1B) * 0.5)
+                aqi = self.pmToWoodsmoke(pm25Cf1: pm25Cf1)
             }
 
             DispatchQueue.main.async {

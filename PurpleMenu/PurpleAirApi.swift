@@ -16,7 +16,7 @@ class PurpleAirApi {
         self.apiKey = apiKey
     }
 
-    func getData(completionHandler: @escaping (Sensor) -> ()) {
+    func getData(completionHandler: @escaping (Sensors) -> ()) {
         guard let url = URL(string: urlString) else { return }
 
         var request = URLRequest(url: url)
@@ -29,8 +29,8 @@ class PurpleAirApi {
             let decoder = JSONDecoder()
 
             do {
-                let sensor = try decoder.decode(Sensor.self, from: data)
-                completionHandler(sensor)
+                let sensors = try decoder.decode(Sensors.self, from: data)
+                completionHandler(sensors)
             } catch {
                 debugPrint("error decoding response")
             }

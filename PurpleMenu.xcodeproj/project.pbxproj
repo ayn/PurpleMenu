@@ -13,7 +13,6 @@
 		3726C1D4252CEEAB00B0B216 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3726C1D3252CEEAB00B0B216 /* Preview Assets.xcassets */; };
 		3726C1D7252CEEAB00B0B216 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3726C1D5252CEEAB00B0B216 /* Main.storyboard */; };
 		3726C1E1252CF33000B0B216 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3726C1E0252CF33000B0B216 /* Sensor.swift */; };
-		3726C1E4252CF44600B0B216 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3726C1E3252CF44600B0B216 /* Result.swift */; };
 		3726C1E7252CF4CE00B0B216 /* PurpleAirApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */; };
 		3748D18D252D505200A758D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748D18C252D505200A758D6 /* AppDelegate.swift */; };
 		3748D191252D505300A758D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3748D190252D505300A758D6 /* Assets.xcassets */; };
@@ -48,7 +47,6 @@
 		3726C1D8252CEEAB00B0B216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3726C1D9252CEEAB00B0B216 /* PurpleMenu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PurpleMenu.entitlements; sourceTree = "<group>"; };
 		3726C1E0252CF33000B0B216 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
-		3726C1E3252CF44600B0B216 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = PurpleAirApi.swift; sourceTree = "<group>"; tabWidth = 4; wrapsLines = 0; };
 		3748D18A252D505200A758D6 /* LauncherApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LauncherApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3748D18C252D505200A758D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 				3726C1D9252CEEAB00B0B216 /* PurpleMenu.entitlements */,
 				3726C1D2252CEEAB00B0B216 /* Preview Content */,
 				3726C1E0252CF33000B0B216 /* Sensor.swift */,
-				3726C1E3252CF44600B0B216 /* Result.swift */,
 				3726C1E6252CF4CE00B0B216 /* PurpleAirApi.swift */,
 				37A3C07E252FB74400C2D12C /* SensorViewModel.swift */,
 				37A3C082252FCCA700C2D12C /* UserDefaultsExtension.swift */,
@@ -263,7 +260,6 @@
 				3726C1CF252CEEA900B0B216 /* ContentView.swift in Sources */,
 				3726C1E1252CF33000B0B216 /* Sensor.swift in Sources */,
 				3726C1E7252CF4CE00B0B216 /* PurpleAirApi.swift in Sources */,
-				3726C1E4252CF44600B0B216 /* Result.swift in Sources */,
 				37A3C07F252FB74400C2D12C /* SensorViewModel.swift in Sources */,
 				37A3C083252FCCA700C2D12C /* UserDefaultsExtension.swift in Sources */,
 				3726C1CD252CEEA900B0B216 /* AppDelegate.swift in Sources */,
@@ -426,7 +422,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"PurpleMenu/Preview Content\"";
-				DEVELOPMENT_TEAM = BVZF7TL777;
+				DEVELOPMENT_TEAM = SV8J3E48E9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PurpleMenu/Info.plist;
@@ -453,7 +449,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"PurpleMenu/Preview Content\"";
-				DEVELOPMENT_TEAM = BVZF7TL777;
+				DEVELOPMENT_TEAM = SV8J3E48E9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = PurpleMenu/Info.plist;
@@ -481,7 +477,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"LauncherApplication/Preview Content\"";
-				DEVELOPMENT_TEAM = BVZF7TL777;
+				DEVELOPMENT_TEAM = SV8J3E48E9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LauncherApplication/Info.plist;
@@ -510,7 +506,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"LauncherApplication/Preview Content\"";
-				DEVELOPMENT_TEAM = BVZF7TL777;
+				DEVELOPMENT_TEAM = SV8J3E48E9;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LauncherApplication/Info.plist;
