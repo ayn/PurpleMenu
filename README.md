@@ -6,6 +6,10 @@ I wrote this to display my nearest PurpleAir AQI with US EPA conversion in my ma
 
 There's a basic UI to change sensor to any public PurpleAir outdoor sensor, and choose between US EPA, AQandU, LRAPA, WOODSMOKE, and no conversion.
 
+## Status
+
+This is not really maintained anymore. I have switched to [Paku](https://paku.app) by Kyle Bashour, mainly because I like having Apple Watch complications, and the same subscription also includes the Mac menu bar app.
+
 ## How to Install
 
 * Go to [Releases](https://github.com/ayn/PurpleMenu/releases)
@@ -15,4 +19,3 @@ There's a basic UI to change sensor to any public PurpleAir outdoor sensor, and 
 To get a sensor ID, go to [PurpleAir Map](http://www.purpleair.com/map?mylocation) in your browser, click/tap on a sensor on the map, look at the url in your browser's location bar, and find the `select=` parameter.
 
 To automatically launch PurpleMenu on login, just add it to your [Login Items](https://support.apple.com/guide/mac-help/open-items-automatically-when-you-log-in-mh15189/mac).
-
